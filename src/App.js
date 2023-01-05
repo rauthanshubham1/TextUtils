@@ -1,11 +1,11 @@
 //  Js is always written in { }
 // import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import NavBar from "./components/NavBar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); // whether dark mode is unable or not
@@ -36,17 +36,22 @@ function App() {
   return (
     // Below <> is react fragment used to return a bunch of tags in one tag
     <>
-      <BrowserRouter>
-        <NavBar
-          title="TextUtils"
-          aboutText="About TextUtils"
+      {/* <BrowserRouter> */}
+      <NavBar
+        title="TextUtils"
+        aboutText="About TextUtils"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
+      {/* <NavBar title="TextUtils" mode={mode} /> */}
+      <Alert alert={alert} />
+      <div className="container">
+        <TextForm
+          showAlert={showAlert}
           mode={mode}
-          toggleMode={toggleMode}
+          heading="Enter the text to analyse below"
         />
-        {/* <NavBar title="TextUtils" mode={mode} /> */}
-        <Alert alert={alert} />
-        <div className="container">
-          <Routes>
+        {/* <Routes>
             <Route exact path="/about" element={<About />} />
             <Route
               exact
@@ -59,9 +64,9 @@ function App() {
                 />
               }
             />
-          </Routes>
-        </div>
-      </BrowserRouter>
+          </Routes> */}
+      </div>
+      {/* </BrowserRouter> */}
     </>
   );
 }
