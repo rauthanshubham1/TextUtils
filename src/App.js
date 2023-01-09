@@ -39,7 +39,7 @@ function App() {
       <BrowserRouter>
         <NavBar
           title="TextUtils"
-          aboutText="About TextUtils"
+          aboutText="About"
           mode={mode}
           toggleMode={toggleMode}
         />
@@ -47,7 +47,7 @@ function App() {
         <Alert alert={alert} />
         <div className="container">
           <Routes>
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<About mode={mode} />} />
             <Route
               exact
               path="/"
