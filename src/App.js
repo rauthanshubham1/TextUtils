@@ -16,7 +16,7 @@ function App() {
       message: message,
       type: type,
     });
-    setTimeout(() => {
+    setTimeout(() => {     // this is a comment for this  javascript function 
       setAlert(null);
     }, 1500);
   };
